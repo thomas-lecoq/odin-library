@@ -18,5 +18,10 @@ function addBookToLibrary(book, library) {
     if (!library instanceof Library) {
         throw Error("The element passed for 'library' must be a Library");
     }
+    if (library.bookList.length >= library.maxSize) {
+        throw Error("The selected Library is full and cannot receive any new Book");
+    }    
     library.bookList.push(book);
 }
+
+export { Library };
