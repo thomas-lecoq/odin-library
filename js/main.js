@@ -5,14 +5,13 @@ import { Library } from "./objects/library.js"
 function init() {
     let library = new Library(10);
 
-    const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
-    const dune = new Book("Dune", "Frank Herbert", 412, false);
-    const sapiens = new Book("Sapiens", "Yuval Noah Harari", 443, true);
+    const books = [
+        ["The Hobbit", "J.R.R. Tolkien", 310, true],
+        ["Dune", "Frank Herbert", 412, false],
+        ["Sapiens", "Yuval Noah Harari", 443, true],
+    ];
 
-    library.addBookToLibrary(theHobbit);
-    library.addBookToLibrary(dune);
-    library.addBookToLibrary(sapiens);
-
+    books.forEach((args) => library.addBookToLibrary(new Book(...args)));
 }
 
 init();
