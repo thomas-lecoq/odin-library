@@ -1,6 +1,6 @@
 // main function
 
-import { } from './utils.js';
-import { } from './config.js';
+// import { } from './utils/helpers.js';
+// import { } from './configs/config.js';
 
-init();
+// init();
