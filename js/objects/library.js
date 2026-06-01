@@ -24,4 +24,4 @@ function addBookToLibrary(book, library) {
     library.bookList.push(book);
 }
 
-export { Library };
+export { Library, addBookToLibrary };
