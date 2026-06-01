@@ -11,17 +11,16 @@ function Library(maxSize){
     this.maxSize = maxSize;
 }
 
-function addBookToLibrary(book, library) {
-    if (!book instanceof Book) {
+function addBookToLibrary(book) {
+    if (!(book instanceof Book)) {
         throw Error("The element passed for 'book' must be a Book");
     }
-    if (!library instanceof Library) {
-        throw Error("The element passed for 'library' must be a Library");
-    }
-    if (library.bookList.length >= library.maxSize) {
+    if (this.bookList.length >= library.maxSize) {
         throw Error("The selected Library is full and cannot receive any new Book");
     }    
-    library.bookList.push(book);
+    this.bookList.push(book);
 }
 
-export { Library, addBookToLibrary };
+Library.prototype.addBookToLibrary = addBookToLibrary;
+
+export { Library };
