@@ -7,17 +7,20 @@ export function Book(title, author, pages, haveRead) {
     this.author = author;
     this.pages = pages;
     this.haveRead = haveRead;
-    this.info = function(){
-        const sepStr = ", ";
-        const qualifiedTitleStr = `${this.title} by ${this.author}`; 
-        const pagesStr = `${this.pages} pages`;
-        const haveReadStr = (
-            this.haveRead === true ? "already read" : "not read yet"
-        );
-        return (
-            qualifiedTitleStr
-            .concat(sepStr, pagesStr)
-            .concat(sepStr, haveReadStr)
-        )
-    }
 }
+
+function getInfo() {
+    const sepStr = ", ";
+    const qualifiedTitleStr = `${this.title} by ${this.author}`; 
+    const pagesStr = `${this.pages} pages`;
+    const haveReadStr = (
+        this.haveRead === true ? "already read" : "not read yet"
+    );
+    return (
+        qualifiedTitleStr
+        .concat(sepStr, pagesStr)
+        .concat(sepStr, haveReadStr)
+    )
+}
+
+Book.prototype.getInfo = getInfo;
