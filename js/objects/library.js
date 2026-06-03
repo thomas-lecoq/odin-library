@@ -15,12 +15,10 @@ function addBookToLibrary(book) {
     if (!(book instanceof Book)) {
         throw Error("The element passed for 'book' must be a Book");
     }
-    if (this.bookList.length >= library.maxSize) {
+    if (this.bookList.length >= this.maxSize) {
         throw Error("The selected Library is full and cannot receive any new Book");
     }    
     this.bookList.push(book);
 }
-
-Library.prototype.addBookToLibrary = addBookToLibrary;
 
 export { Library };
