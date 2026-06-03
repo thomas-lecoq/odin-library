@@ -22,5 +22,12 @@ function getInfo() {
         .concat(sepStr, haveReadStr)
     )
 }
-
 Book.prototype.getInfo = getInfo;
+
+function getBookData() {
+    const bookProps = Object.fromEntries(
+    Object.entries(this).filter(([, value]) => typeof value !== ("function"))
+    );
+    return bookProps
+}
+Book.prototype.getBookData = getBookData;
