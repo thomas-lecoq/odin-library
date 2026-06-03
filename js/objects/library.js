@@ -20,5 +20,14 @@ function addBookToLibrary(book) {
     }    
     this.bookList.push(book);
 }
+Library.prototype.addBookToLibrary = addBookToLibrary;
 
+function getLibraryData() {
+    const libraryData = {};
+    this.bookList.forEach((element, index) => {
+        libraryData[index] = element.getBookData()
+    });
+    return libraryData
+}
+Library.prototype.getLibraryData = getLibraryData;
 export { Library };
