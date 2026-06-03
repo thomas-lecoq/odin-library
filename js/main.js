@@ -12,6 +12,7 @@ function init() {
     ];
 
     books.forEach((args) => library.addBookToLibrary(new Book(...args)));
+    console.log(library.getLibraryData());
 }
 
 init();
