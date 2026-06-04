@@ -1,0 +1,67 @@
+:root {
+    --gunmetal: #393d3f;
+    --almond: #D5BBB1;
+    --teal: #9CC4B2;
+    --rose: #C98CA7;
+    --bubblegum: #E76D83;
+}
+
+/* ============================================
+   COMMON ELEMENTS
+   ============================================ */
+body {
+    background-color: var(--gunmetal)
+}
+
+h1 {
+    color: var(--bubblegum);
+    font-size: 3rem;
+}
+
+p {
+    color: var(--almond);
+    font-size: 1rem;
+}
+
+/* ============================================
+   HEADER SPECIFIC ELEMENTS
+   ============================================ */
+header {
+    grid-row: 1;
+    grid-column: 2;
+    background-color: var(--gunmetal);
+    margin-block: 50px;
+    margin-inline: 25px;
+}
+
+/* ============================================
+   BODY SPECIFIC ELEMENTS
+   ============================================ */
+main {
+    --card-size: 130px;
+    grid-row: 2;
+    grid-column: 2;
+    align-self: start;
+    display: grid;
+    grid-auto-rows: var(--card-size);
+    gap: 15px;
+    border-left: 4px inset var(--rose);
+    margin-left: 25px;
+    padding-left: 25px;
+    background-color: var(--gunmetal);
+}
+
+main > div {
+    color: var(--gunmetal);
+}
+
+.card {
+    background-color: var(--almond);
+    border-radius: 4px;
+}
+
+#body-ctnr {
+    min-height: 100vh;
+    display: grid;
+    grid-template: auto 1fr 100px / 1fr minmax(50%, 600px) 1fr;
+}
