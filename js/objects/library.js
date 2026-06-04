@@ -7,7 +7,7 @@ function Library(maxSize){
     if (maxSize <= 0) {
         throw Error("A Library must have a non negative size");
     }
-    this.bookList = [];
+    this.collection = [];
     this.maxSize = maxSize;
 }
 
@@ -15,16 +15,16 @@ function addBookToLibrary(book) {
     if (!(book instanceof Book)) {
         throw Error("The element passed for 'book' must be a Book");
     }
-    if (this.bookList.length >= this.maxSize) {
+    if (this.collection.length >= this.maxSize) {
         throw Error("The selected Library is full and cannot receive any new Book");
     }    
-    this.bookList.push(book);
+    this.collection.push(book);
 }
 Library.prototype.addBookToLibrary = addBookToLibrary;
 
 function getLibraryData() {
     const libraryData = {};
-    this.bookList.forEach((element, index) => {
+    this.collection.forEach((element, index) => {
         libraryData[index] = element.getBookData()
     });
     return libraryData
