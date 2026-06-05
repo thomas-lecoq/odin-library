@@ -51,8 +51,9 @@ main {
     background-color: var(--gunmetal);
 }
 
-main > div {
+div > p {
     color: var(--gunmetal);
+    font-size: 0.8rem;
 }
 
 .card {
