@@ -19,8 +19,23 @@
         </button>
 
         <dialog id="add-book-dialog">
-            <p>Dummy dialog box</p>
-            <button autofocus>Close dialog</button>
+            <p>Add your book information :</p>
+            <form id="add-book-form">
+                <label for="book-title">Book title :</label>
+                <input id="book-title" type="text" name="title" required maxlength="100">
+
+                <label for="book-author">Author :</label>
+                <input id="book-author" type="text" name="author" required maxlength="100">
+
+                <label for="book-pages">Number of pages :</label>
+                <input id="book-pages" type="number" name="pages" required min="0" max="9999" step="1" >
+
+                <label for="book-haveread">Did you read it ?</label>
+                <input id="book-haveread" type="checkbox" name="haveRead" required>
+                
+                <button id="dialog-close-btn" autofocus>Abort changes</button>
+                <button id="dialog-submit-btn" type="submit">Add book</button>
+            </form>
         </dialog>
 
         <main>

@@ -31,7 +31,7 @@ header {
     grid-row: 1;
     grid-column: 2;
     background-color: var(--gunmetal);
-    margin-block: 50px;
+    margin-block: 30px;
     margin-inline: 25px;
 }
 
@@ -46,7 +46,7 @@ header > p {
 #body-ctnr {
     min-height: 100vh;
     display: grid;
-    grid-template: auto auto 1fr 100px / 1fr minmax(50%, 600px) 1fr;
+    grid-template: auto auto 1fr minmax(0, 100px) / 1fr minmax(50%, 600px) 1fr;
     gap: 25px;
 }
 
@@ -129,12 +129,85 @@ main {
 /* ============================================
    DIALOG SPECIFIC ELEMENTS
    ============================================ */
-   ::backdrop {
+::backdrop {
     background-color: var(--gunmetal-low-opacity)
-   }
+}
 
-   #add-book-dialog {
+#add-book-dialog {
+    width: 50vw;
     background-color: var(--almond-light);
     border: 3px solid var(--gunmetal);
-    border-radius: 4px;
-   }
+    border-radius: 12px;
+}
+
+dialog > p {
+    margin-bottom: 10%;
+}
+
+/* ============================================
+   FORM SPECIFIC ELEMENTS
+   ============================================ */
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.75rem 1rem;
+}
+
+form > input {
+    border: 1px solid var(--gunmetal);
+    border-radius: 12px;
+}
+
+  input[type="checkbox"] {
+      /* on efface le style natif */
+      appearance: none;
+
+      /* le rail */
+      width: 3rem;
+      height: 1.5rem;
+      border: 1px solid var(--gunmetal);
+      border-radius: 1rem;
+      background-color: #ccc;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.2s;
+  }
+
+  input[type="checkbox"]::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(1.5rem - 4px);
+      height: calc(1.5rem - 4px);
+      border-radius: 50%;
+      background-color: white;
+      transition: left 0.2s;
+  }
+
+  input[type="checkbox"]:checked {
+      background-color: var(--bubblegum);
+  }
+
+  input[type="checkbox"]:checked::before {
+      left: calc(100% - 1.5rem + 2px);
+  }
+
+form > button {
+    background-color: var(--rose);
+    border-radius: 36px;
+    border: 3px solid var(--gunmetal);
+    font-size: 1rem;
+    color: black;
+    padding-block: 5px;
+    gap: 5px;
+    cursor: pointer;
+    transition: translate 100ms ease-out, background-color 100ms ease-out, scale 100ms ease-out;
+}
+
+form > button:active {
+    translate: 0 1px;
+    scale: 0.97;
+    transition-duration: 25ms;
+}

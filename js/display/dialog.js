@@ -2,7 +2,7 @@
 
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book-btn");
-const closeButton = document.querySelector("dialog button");
+const closeButton = document.querySelector("#dialog-close-btn");
 
 export function setupDialogListeners() {
     showButton.addEventListener("click", () => {
