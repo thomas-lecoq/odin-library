@@ -3,6 +3,7 @@
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book-btn");
 const closeButton = document.querySelector("#dialog-close-btn");
+const dialogForm = document.querySelector("#add-book-form");
 
 export function setupDialogListeners() {
     showButton.addEventListener("click", () => {
@@ -26,4 +27,17 @@ export function setupDialogListeners() {
     closeButton.addEventListener("click", () => {
         dialog.close();
     });
+
+    dialogForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const data = new FormData(event.target);
+        const bookData = [
+            data.get('title'),
+            data.get('author'),
+            Number(data.get('pages')),
+            data.get('have-read') === "on" ? true : false,
+        ]
+        console.log(bookData); // to be substitute: add book to library
+        });
 }
