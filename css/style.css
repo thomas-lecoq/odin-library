@@ -83,7 +83,7 @@ main {
     border: 3px solid var(--almond);
     font-size: 1rem;
     color: black;
-    padding: 10px;
+    padding-block: 5px;
     gap: 5px;
     cursor: pointer;
     transition: translate 100ms ease-out, background-color 100ms ease-out, scale 100ms ease-out;
