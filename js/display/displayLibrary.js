@@ -1,23 +1,26 @@
 // Screen update and content display (from Library).
 
+import { CLASS_MAPPING } from "../configs/config.js";
+import { appendNewElement } from "../utils/helpers.js";
 import { Book } from "../objects/book.js";
 import { Library } from "../objects/library.js";
-import { appendNewElement } from "../utils/helpers.js";
 
-function displayBook(bookDataObject) {
+function displayBook(bookDataObj) {
+    // select `main` element
     const mainElt = document.querySelector("main");
-    const newEltArr = ["div", "card", mainElt];
-    const newBookElt = appendNewElement(...newEltArr);
 
-    const newBookArr = ["p", "book-info", newBookElt];
-    for (const [key, value] of Object.entries(bookDataObject)) {
-        const newContent = appendNewElement(...newBookArr, `${value}`);
+    // add `div` with css class `card` to `main` element in DOM
+    const newBookElt = appendNewElement("div", "card", mainElt);
+
+    // add `p` with css class defined by CLASS_MAPPING to previously created `div` in DOM
+    for (const [key, value] of Object.entries(bookDataObj)) {
+        appendNewElement("p", CLASS_MAPPING[key], newBookElt, `${value}`)
     }
 }
 
 export function displayLibrary(library) {
-    const libraryData = library.getLibraryData()
-    for (const [key, value] of Object.entries(libraryData)) {
-        displayBook(libraryData[key]);
+    const libraryDataObj = library.getLibraryData()
+    for (const [key] of Object.entries(libraryDataObj)) {
+        displayBook(libraryDataObj[key]);
     }
 }

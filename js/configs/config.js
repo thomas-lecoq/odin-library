@@ -5,3 +5,9 @@ export const BOOKS = [
     ["Dune", "Frank Herbert", 412, false],
     ["Sapiens", "Yuval Noah Harari", 443, true],
 ];
+
+export const CLASS_MAPPING = {
+    "id": "book-id",
+    "description": "book-desc",
+    "haveRead": "book-read",
+}
