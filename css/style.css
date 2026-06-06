@@ -59,6 +59,7 @@ main {
 .card {
     background-color: var(--almond);
     border-radius: 4px;
+    padding: 10px;
 }
 
 .book-desc {
