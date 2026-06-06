@@ -9,25 +9,12 @@ export function Book(title, author, pages, haveRead) {
     this.haveRead = haveRead;
 }
 
-function getInfo() {
-    const sepStr = ", ";
-    const qualifiedTitleStr = `${this.title} by ${this.author}`; 
-    const pagesStr = `${this.pages} pages`;
-    const haveReadStr = (
-        this.haveRead === true ? "already read" : "not read yet"
-    );
-    return (
-        qualifiedTitleStr
-        .concat(sepStr, pagesStr)
-        .concat(sepStr, haveReadStr)
-    )
-}
-Book.prototype.getInfo = getInfo;
-
 function getBookData() {
-    const bookProps = Object.fromEntries(
-    Object.entries(this).filter(([, value]) => typeof value !== ("function"))
-    );
-    return bookProps
+    const { id, title, author, pages, haveRead } = this;
+    return {
+        id,
+        description: `${title} by ${author}, ${pages} pages`,
+        haveRead,
+    };
 }
 Book.prototype.getBookData = getBookData;
