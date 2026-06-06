@@ -1,6 +1,8 @@
 :root {
     --gunmetal: #393d3f;
+    --gunmetal-low-opacity: color-mix(in srgb, var(--gunmetal) 60%, transparent);
     --almond: #D5BBB1;
+    --almond-light: #f7ebe6;
     --teal: #9CC4B2;
     --rose: #C98CA7;
     --bubblegum: #E76D83;
@@ -123,3 +125,16 @@ main {
     line-height: 1;
     padding: 0;
 }
+
+/* ============================================
+   DIALOG SPECIFIC ELEMENTS
+   ============================================ */
+   ::backdrop {
+    background-color: var(--gunmetal-low-opacity)
+   }
+
+   #add-book-dialog {
+    background-color: var(--almond-light);
+    border: 3px solid var(--gunmetal);
+    border-radius: 4px;
+   }
