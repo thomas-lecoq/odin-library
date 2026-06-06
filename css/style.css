@@ -45,7 +45,7 @@ main {
     display: grid;
     grid-auto-rows: var(--card-size);
     gap: 15px;
-    border-left: 4px inset var(--rose);
+    border-left: 4px inset var(--teal);
     margin-left: 25px;
     padding-left: 25px;
     background-color: var(--gunmetal);
@@ -59,6 +59,11 @@ div > p {
 .card {
     background-color: var(--almond);
     border-radius: 4px;
+}
+
+.book-desc {
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 #body-ctnr {
