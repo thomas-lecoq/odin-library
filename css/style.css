@@ -153,7 +153,6 @@ main {
 }
 
 #add-book-dialog {
-    width: auto;
     background-color: var(--almond-light);
     border: 3px solid var(--gunmetal);
     border-radius: 12px;
