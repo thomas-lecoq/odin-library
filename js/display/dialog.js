@@ -42,7 +42,7 @@ export function setupDialogListeners(library) {
             Number(data.get('pages')),
             data.get('have-read') === "on" ? true : false,
         );
-        library.addBookToLibrary(newBook);
+        library.addBook(newBook);
         displayBook(newBook.getBookData(), mainElt);
         dialog.close();
         });

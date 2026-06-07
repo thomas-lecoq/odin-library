@@ -7,7 +7,7 @@ import { setupDialogListeners } from "./display/dialog.js"
 
 function init() {
     let library = new Library(10);
-    BOOKS.forEach((args) => library.addBookToLibrary(new Book(...args)));
+    BOOKS.forEach((args) => library.addBook(new Book(...args)));
     displayLibrary(library);
     setupDialogListeners(library);
 }

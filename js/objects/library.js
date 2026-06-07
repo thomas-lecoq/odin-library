@@ -11,7 +11,7 @@ function Library(size){
     this.size = size;
 }
 
-function addBookToLibrary(book) {
+function addBook(book) {
     if (!(book instanceof Book)) {
         throw Error("The element passed for 'book' must be a Book");
     }
@@ -20,7 +20,7 @@ function addBookToLibrary(book) {
     }    
     this.collection.push(book);
 }
-Library.prototype.addBookToLibrary = addBookToLibrary;
+Library.prototype.addBook = addBook;
 
 function getLibraryData() {
     const libraryData = {};
