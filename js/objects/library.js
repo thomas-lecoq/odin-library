@@ -22,6 +22,11 @@ function addBook(book) {
 }
 Library.prototype.addBook = addBook;
 
+function getBook(id) {
+    return this.collection.get(id);
+}
+Library.prototype.getBook = getBook;
+
 function removeBook(id) {
     return this.collection.delete(id);
 }

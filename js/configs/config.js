@@ -8,6 +8,12 @@ export const DELETE_SYMBOL = {
     "value": "Remove this book",
 }; 
 
+export const TOGGLE_READ_SYMBOL = {
+    "tag": "button",
+    "class": "toggle-read-btn",
+    "value": "Toggle read status",
+};
+
 export const BOOKS = [
     ["The Hobbit", "J.R.R. Tolkien", 310, true],
     ["Dune", "Frank Herbert", 412, false],

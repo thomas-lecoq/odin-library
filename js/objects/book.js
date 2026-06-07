@@ -18,3 +18,8 @@ function getBookData() {
     };
 }
 Book.prototype.getBookData = getBookData;
+
+function toggleRead() {
+    this.haveRead = !this.haveRead;
+}
+Book.prototype.toggleRead = toggleRead;

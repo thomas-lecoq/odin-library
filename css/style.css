@@ -100,6 +100,22 @@ main {
     transition: translate 100ms ease-out, background-color 100ms ease-out, scale 100ms ease-out;
 }
 
+.toggle-read-btn {
+    background-color: var(--teal);
+    border: 3px solid var(--gunmetal);
+    border-radius: var(--button-border-radius);
+    padding-block: var(--button-padding-block);
+    font-size: 0.6rem;
+    transition: background-color 500ms ease-out;
+}
+
+.toggle-read-btn:hover {
+    cursor: pointer;
+    color: var(--almond);
+    background-color: var(--gunmetal);
+    transition: translate 100ms ease-out, background-color 100ms ease-out, scale 100ms ease-out;
+}
+
 .book-desc {
     font-weight: bold;
     font-size: 1rem;
