@@ -9,7 +9,7 @@ function init() {
     let library = new Library(10);
     BOOKS.forEach((args) => library.addBookToLibrary(new Book(...args)));
     displayLibrary(library);
-    setupDialogListeners();
+    setupDialogListeners(library);
 }
 
 init();

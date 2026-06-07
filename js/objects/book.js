@@ -14,7 +14,7 @@ function getBookData() {
     return {
         id,
         description: `${title} by ${author}, ${pages} pages`,
-        haveRead,
+        haveRead: (haveRead === true) ? "Read": "Not read yet",
     };
 }
 Book.prototype.getBookData = getBookData;

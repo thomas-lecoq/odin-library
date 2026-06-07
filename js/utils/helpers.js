@@ -14,6 +14,6 @@ export function appendNewElement(tagName, className, parent, textContent = "") {
     const element = document.createElement(tagName);
     element.classList.add(className);
     element.textContent = textContent;
-    parent.appendChild(element);
+    parent.prepend(element);
     return element;
 }

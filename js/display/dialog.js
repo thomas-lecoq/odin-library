@@ -1,11 +1,15 @@
 // Dialog boxes logic and all related elements.
 
+import { Book } from "../objects/book.js";
+import { displayBook } from "../display/displayLibrary.js"
+
+const mainElt = document.querySelector("main");
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book-btn");
 const closeButton = document.querySelector("#dialog-close-btn");
 const dialogForm = document.querySelector("#add-book-form");
 
-export function setupDialogListeners() {
+export function setupDialogListeners(library) {
     showButton.addEventListener("click", () => {
         dialog.showModal();
     });
@@ -32,12 +36,14 @@ export function setupDialogListeners() {
         event.preventDefault();
 
         const data = new FormData(event.target);
-        const bookData = [
+        const newBook = new Book(
             data.get('title'),
             data.get('author'),
             Number(data.get('pages')),
             data.get('have-read') === "on" ? true : false,
-        ]
-        console.log(bookData); // to be substitute: add book to library
+        );
+        library.addBookToLibrary(newBook);
+        displayBook(newBook.getBookData(), mainElt);
+        dialog.close();
         });
 }

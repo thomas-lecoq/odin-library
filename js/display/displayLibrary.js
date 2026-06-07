@@ -5,7 +5,7 @@ import { appendNewElement } from "../utils/helpers.js";
 import { Book } from "../objects/book.js";
 import { Library } from "../objects/library.js";
 
-function displayBook(bookDataObj, parent) {
+export function displayBook(bookDataObj, parent) {
     const newBookElt = appendNewElement("div", "card", parent);
     for (const [key, value] of Object.entries(bookDataObj)) {
         appendNewElement("p", CLASS_MAPPING[key], newBookElt, value)
