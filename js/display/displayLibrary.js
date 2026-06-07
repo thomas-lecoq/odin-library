@@ -6,9 +6,13 @@ import { Book } from "../objects/book.js";
 import { Library } from "../objects/library.js";
 
 export function displayBook(bookDataObj, parent) {
-    const newBookElt = appendNewElement("div", "card", parent);
+    const newBookElt = appendNewElement("div", "card", parent, "", "prepend");
     for (const [key, value] of Object.entries(bookDataObj)) {
-        appendNewElement("p", CLASS_MAPPING[key], newBookElt, value)
+        if (key === "id") {
+            newBookElt.setAttribute("data-book-id", value)
+        } else {
+            appendNewElement("p", CLASS_MAPPING[key], newBookElt, value)
+        }
     }
 }
 
