@@ -194,10 +194,10 @@ form > input {
 }
 
 input[type="checkbox"] {
-    /* on efface le style natif */
+    /* reset native style */
     appearance: none;
 
-    /* le rail */
+    /* rail definition */
     width: 3rem;
     height: 1.5rem;
     border: 1px solid var(--gunmetal);
