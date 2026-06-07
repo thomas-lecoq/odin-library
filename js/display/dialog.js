@@ -45,5 +45,6 @@ export function setupDialogListeners(library) {
         library.addBook(newBook);
         displayBook(newBook.getBookData(), MAIN_ELT);
         dialog.close();
+        event.target.reset();
         });
 }
