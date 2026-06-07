@@ -19,7 +19,7 @@ export function displayBook(bookDataObj, parent) {
 export function displayLibrary(library) {
     const mainElt = document.querySelector("main");
     const libraryDataObj = library.getLibraryData()
-    for (const [key] of Object.entries(libraryDataObj)) {
-        displayBook(libraryDataObj[key], mainElt);
+    for (const bookData of Object.values(libraryDataObj)) {
+        displayBook(bookData, mainElt);
     }
 }

@@ -7,7 +7,7 @@ function Library(size){
     if (size <= 0) {
         throw Error("A Library must have a non negative size");
     }
-    this.collection = [];
+    this.collection = new Map();
     this.size = size;
 }
 
@@ -15,18 +15,23 @@ function addBook(book) {
     if (!(book instanceof Book)) {
         throw Error("The element passed for 'book' must be a Book");
     }
-    if (this.collection.length >= this.size) {
+    if (this.collection.size >= this.size) {
         throw Error("The selected Library is full and cannot receive any new Book");
     }    
-    this.collection.push(book);
+    this.collection.set(book.id, book);
 }
 Library.prototype.addBook = addBook;
 
+function removeBook(id) {
+    return this.collection.delete(id);
+}
+Library.prototype.removeBook = removeBook;
+
 function getLibraryData() {
     const libraryData = {};
-    this.collection.forEach((element, index) => {
-        libraryData[index] = element.getBookData()
-    });
+    for (const [id, book] of this.collection) {
+        libraryData[id] = book.getBookData()
+    }
     return libraryData
 }
 Library.prototype.getLibraryData = getLibraryData;
