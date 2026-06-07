@@ -1,5 +1,13 @@
 // SCREAMING_CASE consts and all related configuration elements.
 
+export const MAIN_ELT = document.querySelector("main");
+
+export const DELETE_SYMBOL = {
+    "tag": "button",
+    "class": "delete-book-btn",
+    "value": "Remove this book",
+}; 
+
 export const BOOKS = [
     ["The Hobbit", "J.R.R. Tolkien", 310, true],
     ["Dune", "Frank Herbert", 412, false],

@@ -2,8 +2,8 @@
 
 import { Book } from "../objects/book.js";
 import { displayBook } from "../display/displayLibrary.js"
+import { MAIN_ELT } from "../configs/config.js"
 
-const mainElt = document.querySelector("main");
 const dialog = document.querySelector("dialog");
 const showButton = document.querySelector("#add-book-btn");
 const closeButton = document.querySelector("#dialog-close-btn");
@@ -43,7 +43,7 @@ export function setupDialogListeners(library) {
             data.get('have-read') === "on" ? true : false,
         );
         library.addBook(newBook);
-        displayBook(newBook.getBookData(), mainElt);
+        displayBook(newBook.getBookData(), MAIN_ELT);
         dialog.close();
         });
 }

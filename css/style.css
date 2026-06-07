@@ -6,6 +6,9 @@
     --teal: #9CC4B2;
     --rose: #C98CA7;
     --bubblegum: #E76D83;
+    --red-warning: #c90025;
+    --button-border-radius: 36px;
+    --button-padding-block: 5px;
 }
 
 /* ============================================
@@ -18,6 +21,12 @@ body {
 h1 {
     color: var(--bubblegum);
     font-size: 3rem;
+}
+
+button:active {
+    translate: 0 1px;
+    scale: 0.97;
+    transition-duration: 25ms;
 }
 
 /* ============================================
@@ -64,15 +73,31 @@ main {
     background-color: var(--gunmetal);
 }
 
+.card {
+    background-color: var(--almond);
+    border-radius: 4px;
+    padding: 10px;
+}
+
 .card > p {
     color: var(--gunmetal);
     font-size: 0.8rem;
 }
 
-.card {
-    background-color: var(--almond);
-    border-radius: 4px;
-    padding: 10px;
+.delete-book-btn {
+    background-color: var(--rose);
+    border: 3px solid var(--gunmetal);
+    border-radius: var(--button-border-radius);
+    padding-block: var(--button-padding-block);
+    font-size: 0.6rem;
+    transition: background-color 500ms ease-out;
+}
+
+.delete-book-btn:hover {
+    cursor: pointer;
+    color: var(--almond);
+    background-color: var(--red-warning);
+    transition: translate 100ms ease-out, background-color 100ms ease-out, scale 100ms ease-out;
 }
 
 .book-desc {
@@ -89,11 +114,11 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--rose);
-    border-radius: 36px;
+    border-radius: var(--button-border-radius);
     border: 3px solid var(--almond);
     font-size: 1rem;
     color: black;
-    padding-block: 5px;
+    padding-block: var(--button-padding-block);
     gap: 5px;
     cursor: pointer;
     transition: translate 100ms ease-out, background-color 100ms ease-out, scale 100ms ease-out;
@@ -103,12 +128,6 @@ main {
     background-color: var(--almond);
     border: 3px solid var(--rose);
     translate: 0 -3px;
-}
-
-#add-book-btn:active {
-    translate: 0 1px;
-    scale: 0.97;
-    transition-duration: 25ms;
 }
 
 #add-symbol {
@@ -134,7 +153,7 @@ main {
 }
 
 #add-book-dialog {
-    width: 50vw;
+    width: auto;
     background-color: var(--almond-light);
     border: 3px solid var(--gunmetal);
     border-radius: 12px;
@@ -159,55 +178,49 @@ form > input {
     border-radius: 12px;
 }
 
-  input[type="checkbox"] {
-      /* on efface le style natif */
-      appearance: none;
+input[type="checkbox"] {
+    /* on efface le style natif */
+    appearance: none;
 
-      /* le rail */
-      width: 3rem;
-      height: 1.5rem;
-      border: 1px solid var(--gunmetal);
-      border-radius: 1rem;
-      background-color: #ccc;
-      position: relative;
-      cursor: pointer;
-      transition: background-color 0.2s;
-  }
+    /* le rail */
+    width: 3rem;
+    height: 1.5rem;
+    border: 1px solid var(--gunmetal);
+    border-radius: 1rem;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 
-  input[type="checkbox"]::before {
-      content: "";
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: calc(1.5rem - 4px);
-      height: calc(1.5rem - 4px);
-      border-radius: 50%;
-      background-color: white;
-      transition: left 0.2s;
-  }
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(1.5rem - 4px);
+    height: calc(1.5rem - 4px);
+    border-radius: 50%;
+    background-color: white;
+    transition: left 0.2s;
+}
 
-  input[type="checkbox"]:checked {
-      background-color: var(--bubblegum);
-  }
+input[type="checkbox"]:checked {
+    background-color: var(--bubblegum);
+}
 
-  input[type="checkbox"]:checked::before {
-      left: calc(100% - 1.5rem + 2px);
-  }
+input[type="checkbox"]:checked::before {
+    left: calc(100% - 1.5rem + 2px);
+}
 
 form > button {
     background-color: var(--rose);
-    border-radius: 36px;
+    border-radius: var(--button-border-radius);
     border: 3px solid var(--gunmetal);
     font-size: 1rem;
     color: black;
-    padding-block: 5px;
+    padding-block: var(--button-padding-block);
     gap: 5px;
     cursor: pointer;
     transition: translate 100ms ease-out, background-color 100ms ease-out, scale 100ms ease-out;
-}
-
-form > button:active {
-    translate: 0 1px;
-    scale: 0.97;
-    transition-duration: 25ms;
 }
