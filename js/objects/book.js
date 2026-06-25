@@ -1,25 +1,26 @@
-export function Book(title, author, pages, haveRead) {
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor")
+export class Book {
+    #id;
+
+    constructor(title, author, pages, haveRead) {
+        this.#id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead;
     }
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.haveRead = haveRead;
-}
 
-function getBookData() {
-    const { id, title, author, pages, haveRead } = this;
-    return {
-        id,
-        description: `${title} by ${author}, ${pages} pages`,
-        haveRead: (haveRead === true) ? "Read": "Not read yet",
-    };
-}
-Book.prototype.getBookData = getBookData;
+    get id() { return this.#id; }
 
-function toggleRead() {
-    this.haveRead = !this.haveRead;
+
+    getBookData() {
+        return {
+            id: this.id,
+            description: `${this.title} by ${this.author}, ${this.pages} pages`,
+            haveRead: this.haveRead ? "Read": "Not read yet",
+        };
+    }
+
+    toggleRead() {
+        this.haveRead = !this.haveRead;
+    }
 }
-Book.prototype.toggleRead = toggleRead;
